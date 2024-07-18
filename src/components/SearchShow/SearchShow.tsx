@@ -1,7 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {AppDispatch} from '../../app/store';
+import {fetchShows} from '../../containers/showsSlice';
 
 const SearchShow = () => {
   const [searchString, setSearchString] = useState('');
+
+  const dispatch: AppDispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchShows(searchString));
+  }, [dispatch, searchString]);
 
   return (
     <div className="row mt-5">
