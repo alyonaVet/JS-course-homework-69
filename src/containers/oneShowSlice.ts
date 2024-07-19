@@ -8,7 +8,7 @@ export interface OneShowType {
   image: {
     medium: string,
   };
-  genres: Array<string>;
+  type: string;
   rating: {
     average: number,
   };
@@ -33,7 +33,7 @@ const initialState: OneShowState = {
     image: {
       medium: '',
     },
-    genres: [],
+    type: '',
     rating: {
       average: 0,
     },
